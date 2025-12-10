@@ -100,14 +100,14 @@ class homePage extends State<HomePage>{
           : Column(
         children: [
 
-          //  -------- FOR TESTING LOCAL NOTIFICATIONS --------
-          ElevatedButton(
-              onPressed: () async {
-                String mealId = await MealService.getRandomMeal();
-                NotificationService.showNotification(payload: mealId);
-                },
-              child: const Text("TEST NOTIFICATIONS BUTTON")
-          ),
+          //  -------- UNCOMMENT FOR TESTING NOTIFICATIONS --------
+          // ElevatedButton(
+          //     onPressed: () async {
+          //       String mealId = await MealService.getRandomMeal();
+          //       NotificationService.showNotification(payload: mealId);
+          //       },
+          //     child: const Text("TEST NOTIFICATIONS BUTTON")
+          // ),
 
           // Search Bar
           Padding(
