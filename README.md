@@ -1,10 +1,54 @@
 # Mobile Information Systems Lab. Exercise 3
 
-MIS Solution for lab 3
+## Favorite meals
+Saving and accessing the user's favorite meals is handled in: `\lib\services\favorite_meals_service.dart`.
+Each meal thats favorited is saved by it's id and is stored on the user's device using the shared_preferences depencency.
 
-Notifications are configured to work with **Android**.
+#### Home page
+The Appbar has a button that redirects the user to `/favorites` where their favorite meals are shown.
 
-Emulator Details: API 36.0 "Baklava"; Android 16.0
+#### Favorites page
+The user's favorite meals are pulled from favorite_meals_service and displayed from oldest to newest.
+
+#### Meal page
+On each meal's page there's a button on the bottom right that indicates if the meal in the users list of favorite meals.
+
+<br />
+
+## Notifications
+Notifications are configured to work with **Android** in: `\lib\services\notification_service.dart`.
+Emulator used: API 36.0 "Baklava"; Android 16.0
+
+#### Testing notifications
+1.Go to:
+<br />
+  - `\lib\screens\home.dart`
+<br />
+
+2.Go to line 104 and uncomment the following:
+<br />
+            `ElevatedButton(
+              onPressed: () async {
+                String mealId = await MealService.getRandomMeal();
+                NotificationService.showNotification(payload: mealId);
+                },
+              child: const Text("TEST NOTIFICATIONS BUTTON")
+          ),`
+<br />
+This adds a button to the homepage that instantly sends a notification to the phone.
+
+<br />
+
+## Dependencies
+  `cupertino_icons: ^1.0.8
+  http: ^1.6.0
+  url_launcher: ^6.3.2
+  shared_preferences: ^2.5.3
+  firebase_core: ^4.2.1
+  firebase_messaging: ^16.0.4
+  flutter_local_notifications: ^19.5.0
+  timezone: ^0.10.1`
+<br />
 
 ## Recordings
 
@@ -16,7 +60,7 @@ Emulator Details: API 36.0 "Baklava"; Android 16.0
   Couldn't play video
 </video>
 
-## Screenshots
+## Images of the app
 
 <img width="540" height="1200" alt="Screenshot_20251210_153350" src="https://github.com/user-attachments/assets/b25abee6-8cf4-473e-8c84-0908244b48c5" />
 
