@@ -16,22 +16,24 @@ On each meal's page there's a button on the bottom right that indicates if the m
 <br />
 
 ## Notifications
-Notifications are configured to work with **Android** in: ` \lib\services\notification_service.dart `.
+Notifications are configured to work with **Android** in: `\lib\services\notification_service.dart`.
 Emulator used: API 36.0 "Baklava"; Android 16.0
 
-### Testing notifications
-1.Go to: ` \lib\screens\home.dart `
+#### Testing notifications
+1.Go to: `\lib\screens\home.dart`
 <br />
 
 2.Go to line 104 and uncomment the following:
 <br />
-`ElevatedButton(
-  onPressed: () async {
-    String mealId = await MealService.getRandomMeal();
-      NotificationService.showNotification(payload: mealId);
-    },
-    child: const Text("TEST NOTIFICATIONS BUTTON")
-),`
+            ```
+            ElevatedButton( \n
+              onPressed: () async {
+                String mealId = await MealService.getRandomMeal();
+                NotificationService.showNotification(payload: mealId);
+                },
+              child: const Text("TEST NOTIFICATIONS BUTTON")
+          ),
+          ```
 <br />
 This adds a button to the homepage that instantly sends a notification to the phone.
 
