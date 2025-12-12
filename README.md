@@ -24,30 +24,31 @@ Emulator used: API 36.0 "Baklava"; Android 16.0
 <br />
 
 2.Go to line 104 and uncomment the following:
-<br />
-            ```
-            ElevatedButton( \n
+            
+            //  -------- FOR TESTING LOCAL NOTIFICATIONS --------
+            ElevatedButton(
               onPressed: () async {
                 String mealId = await MealService.getRandomMeal();
                 NotificationService.showNotification(payload: mealId);
                 },
               child: const Text("TEST NOTIFICATIONS BUTTON")
-          ),
-          ```
+              ),
 <br />
+<br />
+
 This adds a button to the homepage that instantly sends a notification to the phone.
 
 <br />
 
 ## Dependencies
-  `cupertino_icons: ^1.0.8
-  http: ^1.6.0
-  url_launcher: ^6.3.2
-  shared_preferences: ^2.5.3
-  firebase_core: ^4.2.1
-  firebase_messaging: ^16.0.4
-  flutter_local_notifications: ^19.5.0
-  timezone: ^0.10.1`
+            cupertino_icons: ^1.0.8
+            http: ^1.6.0
+            url_launcher: ^6.3.2
+            shared_preferences: ^2.5.3
+            firebase_core: ^4.2.1
+            firebase_messaging: ^16.0.4
+            flutter_local_notifications: ^19.5.0
+            timezone: ^0.10.1
 <br />
 
 ## Recordings
